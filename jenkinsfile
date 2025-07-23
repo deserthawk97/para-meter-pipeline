@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	parameters {
-	string(name: 'terraform_version', defaultValue: '1.4.5', description: 'Provide the version of terraform to be downloaded ex:1.6.5')
+	string(name: 'terraform_version', defaultValue: '1.4.5', description: 'Provide the version of terraform')
 	}
 	
 	stages{
@@ -9,9 +9,7 @@ pipeline {
 			steps {
 				sh '''
 				cd /opt
-				echo ' This stage downloads the terraform of $(terraform_version)'
-				wget 'https://releases.hashicorp.com/terraform/$(terraform_version)/terraform_$(terraform_version)_linux_arm64.zip'
-				echo ' Download completed'
+				sudo wget 'https://releases.hashicorp.com/terraform/$(terraform_version)/terraform_$(terraform_version)_linux_arm64.zip'
 				'''
 			}
 		}
