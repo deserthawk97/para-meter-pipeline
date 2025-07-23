@@ -9,7 +9,7 @@ pipeline {
 			steps {
 				sh '''
 				cd /opt
-				sudo wget 'https://releases.hashicorp.com/terraform/$(terraform_version)/terraform_$(terraform_version)_linux_arm64.zip'
+				sudo wget 'https://releases.hashicorp.com/terraform/${terraform_version}/terraform_${terraform_version}_linux_arm64.zip'
 				'''
 			}
 		}
