@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	parameters {
-	string { name: 'terraform_version', default_version: '1.4.5', description: 'Provide the version of terraform to be downloaded, e.g., 1.6.5'}
+	string { name: 'terraform_version', default_version: '1.4.5', description: 'Provide the version of terraform to be downloaded: 1.6.5'}
 	}
 	
 	stages{
