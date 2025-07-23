@@ -1,1 +1,17 @@
-
+pipeline {
+	agent any
+	parameters {
+	string { name: 'terraform_version', default_version: '1.4.5', description: 'Provide the version of terraform to be downloaded, e.g., 1.6.5'}
+	}
+	
+	stages{
+		stage('download teraform') {
+			steps {
+			cd /opt
+			echo ' This stage downloads the terraform of $(terraform_version)'
+			wget 'https://releases.hashicorp.com/terraform/$(terraform_version)/terraform_$(terraform_version)_linux_arm64.zip'
+			echo ' Download completed'
+			}
+		}
+	}
+}
