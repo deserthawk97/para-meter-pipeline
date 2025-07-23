@@ -7,12 +7,12 @@ pipeline {
 	stages{
 		stage('download teraform') {
 			steps {
-			sh '''
-			cd /opt
-			echo ' This stage downloads the terraform of ${terraform_version}'
-			sudo wget 'https://releases.hashicorp.com/terraform/${terraform_version}/terraform_${terraform_version}_linux_arm64.zip'
-			echo ' Download completed'
-			'''
+				sh '''
+				cd /opt
+				echo ' This stage downloads the terraform of ${terraform_version}'
+				sudo wget 'https://releases.hashicorp.com/terraform/${terraform_version}/terraform_${terraform_version}_linux_arm64.zip'
+				echo ' Download completed'
+				'''
 			}
 		}
 	}
